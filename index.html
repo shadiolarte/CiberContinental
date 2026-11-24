@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CiberCONTI | Seguridad informática para PyMEs</title>
+<meta name="description" content="CiberCONTI vigila tus sistemas las 24 horas, detecta amenazas y bloquea ataques. Escríbenos y te contactamos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --tinta: #0d2540;
+    --papel: #f5f8fb;
+    --senal: #ff5a1f;
+    --verde: #0b8f6a;
+    --gris: #51647a;
+    --linea: #d3dde8;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--tinta);
+    background: var(--papel);
+  }
+  h1, h2, h3, .logo { font-family: "Bricolage Grotesque", system-ui, sans-serif; line-height: 1.1; margin: 0; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--senal); outline-offset: 3px; }
+
+  header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 6vw;
+  }
+  .logo { font-size: 1.6rem; font-weight: 800; text-decoration: none; }
+  .logo b { color: var(--senal); font-weight: 800; }
+  header a.enlace { font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--senal); }
+
+  .principal {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 6vw;
+    padding: 4vw 6vw 8vw; align-items: start;
+  }
+  h1 { font-size: clamp(2.4rem, 6vw, 4.6rem); font-weight: 800; letter-spacing: -0.02em; }
+  .intro { max-width: 34em; color: var(--gris); margin: 24px 0 32px; }
+
+  .puntos { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; max-width: 34em; }
+  .puntos li { padding-left: 18px; border-left: 4px solid var(--verde); }
+  .puntos strong { display: block; font-family: "Bricolage Grotesque", system-ui, sans-serif; font-size: 1.15rem; }
+  .puntos span { color: var(--gris); }
+
+  form {
+    background: #fff; border: 2px solid var(--tinta); border-radius: 6px;
+    padding: 32px; box-shadow: 8px 8px 0 var(--tinta);
+  }
+  form h2 { font-size: 1.8rem; margin-bottom: 6px; }
+  form p.sub { margin: 0 0 22px; color: var(--gris); }
+  label { display: block; font-weight: 600; margin: 16px 0 6px; }
+  input, textarea {
+    width: 100%; font: inherit; color: inherit;
+    padding: 12px 14px; border: 1.5px solid var(--linea); border-radius: 4px; background: var(--papel);
+  }
+  input:focus, textarea:focus { border-color: var(--tinta); outline: none; box-shadow: 0 0 0 3px rgba(255,90,31,.35); }
+  textarea { min-height: 130px; resize: vertical; }
+  .trampa { position: absolute; left: -9999px; }
+  button {
+    margin-top: 22px; width: 100%; font: inherit; font-weight: 600; font-size: 1.1rem;
+    padding: 14px; border: 0; border-radius: 4px; cursor: pointer;
+    background: var(--senal); color: #fff;
+  }
+  button:hover { background: #e64a10; }
+  button:disabled { opacity: .6; cursor: wait; }
+  #estado { margin: 16px 0 0; font-weight: 600; min-height: 1.6em; }
+  #estado.ok { color: var(--verde); }
+  #estado.error { color: #c0261b; }
+
+  footer { padding: 28px 6vw; border-top: 1px solid var(--linea); color: var(--gris); font-size: .95rem; }
+
+  @media (max-width: 860px) {
+    .principal { grid-template-columns: 1fr; }
+    form { padding: 24px; box-shadow: 5px 5px 0 var(--tinta); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="#">Ciber<b>CONTI</b></a>
+  <a class="enlace" href="#contacto">Contáctanos</a>
+</header>
+
+<main class="principal">
+  <section>
+    <h1>Tu empresa vigilada las 24 horas.</h1>
+    <p class="intro">
+      CiberCONTI protege a pequeñas y medianas empresas que no tienen un equipo de seguridad.
+      Detectamos ataques, bloqueamos al intruso y te avisamos al celular.
+    </p>
+    <ul class="puntos">
+      <li><strong>Vemos todo en un solo lugar</strong><span>Reunimos los registros de tus computadoras y servidores para encontrar lo sospechoso.</span></li>
+      <li><strong>Protegemos tus archivos importantes</strong><span>Si alguien modifica o cifra tus carpetas de finanzas, lo detectamos al instante.</span></li>
+      <li><strong>Respondemos solos</strong><span>Ante un intento de fuerza bruta, bloqueamos la IP atacante sin esperar a nadie.</span></li>
+    </ul>
+  </section>
+
+  <form id="contacto" action="https://formspree.io/f/xaeolvbd" method="POST">
+    <h2>Escríbenos</h2>
+    <p class="sub">Te respondemos en menos de 24 horas.</p>
+
+    <label for="nombre">Nombre</label>
+    <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+
+    <label for="empresa">Empresa</label>
+    <input id="empresa" name="empresa" type="text" autocomplete="organization">
+
+    <label for="correo">Correo</label>
+    <input id="correo" name="email" type="email" autocomplete="email" required>
+
+    <label for="telefono">Teléfono (opcional)</label>
+    <input id="telefono" name="telefono" type="tel" autocomplete="tel">
+
+    <label for="mensaje">¿En qué te ayudamos?</label>
+    <textarea id="mensaje" name="mensaje" required></textarea>
+
+    <input class="trampa" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <button type="submit" id="enviar">Enviar mensaje</button>
+    <p id="estado" role="status" aria-live="polite"></p>
+  </form>
+</main>
+
+<footer>© 2026 CiberCONTI. Proyecto de Ciberseguridad Aplicada, Universidad Continental.</footer>
+
+<script>
+  const form = document.getElementById("contacto");
+  const estado = document.getElementById("estado");
+  const boton = document.getElementById("enviar");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    boton.disabled = true;
+    estado.className = "";
+    estado.textContent = "Enviando...";
+    try {
+      const r = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      });
+      if (r.ok) {
+        form.reset();
+        estado.className = "ok";
+        estado.textContent = "Mensaje enviado. Te contactaremos pronto.";
+      } else {
+        throw new Error();
+      }
+    } catch (err) {
+      estado.className = "error";
+      estado.textContent = "No se pudo enviar. Revisa tu conexión e inténtalo de nuevo.";
+    }
+    boton.disabled = false;
+  });
+</script>
+</body>
+</html>
